@@ -1,2 +1,13 @@
-%h1 Anagram#index
-%p Find me in app/views/anagram/index.html.haml
+%h1 Anagram+ Tool
+%p Instructions: Use the Anagram+ tool to help solve the puzzles!
+
+= simple_form_for :anagram do |f|
+  %h2 Input
+  = f.input :input_text, required: false, label: "Text"
+  = f.input :input_category, as: :select, collection: ["Countries", "States"], required: false, label: "Category"
+  = f.input :input_num_words, as: :select, collection: (1..10), required: false, label: "Number of Words"
+  %h2 Output
+  = f.input :output_text, required: false, label: "Text"
+  = f.input :output_category, as: :select, collection: ["Countries", "States"], required: false, label: "Category"
+  = f.input :output_num_words, as: :select, collection: (1..10), required: false, label: "Number of Words"
+  = f.submit "Anagram+!"
