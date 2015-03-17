@@ -1,7 +1,7 @@
 %h1 Anagram+ Tool
 %p Instructions: Use the Anagram+ tool to help solve the puzzles!
 
-= simple_form_for :anagram do |f|
+= simple_form_for :anagram, url: anagrams_path do |f|
   %h2 Input
   = f.input :input_text, required: false, label: "Text"
   = f.input :input_category, as: :select, collection: ["Countries", "States"], required: false, label: "Category"

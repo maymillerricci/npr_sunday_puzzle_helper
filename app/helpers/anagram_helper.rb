@@ -1,2 +1,0 @@
-module AnagramHelper
-end
