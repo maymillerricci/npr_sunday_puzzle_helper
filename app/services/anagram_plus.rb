@@ -9,7 +9,7 @@ class AnagramPlus
   end
 
   def process
-    list = @output_category.singularize.constantize.all.map(&:name)
+    list = list_of_items_from_category(@output_category, :name)
     combo_array = prepare_words(words_array_combinations(list, @output_num_words))
     output = []
     combo_array.each do |word|
@@ -28,6 +28,10 @@ class AnagramPlus
 
   def prepare_words(words_array)
     words_array.map { |w| prepare_word(w) }
+  end
+
+  def list_of_items_from_category(category, field_name)
+    category.singularize.constantize.all.map { |i| i.send(field_name) }
   end
 
   def anagrams?(word1, word2)
