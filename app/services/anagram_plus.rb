@@ -9,8 +9,8 @@ class AnagramPlus
   end
 
   def process
-    list = list_of_items_from_category(@output_category, :name)
-    combo_array = prepare_words(words_array_combinations(list, @output_num_words))
+    list = prepare_words(list_of_items_from_category(@output_category, :name))
+    combo_array = words_array_combinations(list, @output_num_words)
     output = []
     combo_array.each do |word|
       if anagrams?(@input_text, word)
