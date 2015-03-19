@@ -1,6 +1,7 @@
 class AnagramPlus
 
   def initialize(params)
+    @tool = params[:tool]
     @input_text = prepare_word(params[:input_text])
     @input_category = params[:input_category]
     @input_num_words = params[:input_num_words].to_i
@@ -9,12 +10,14 @@ class AnagramPlus
   end
 
   def process
-    list = prepare_words(list_of_items_from_category(@output_category, :name))
-    combo_array = words_array_combinations(list, @output_num_words)
     output = []
-    combo_array.each do |word|
-      if anagrams?(@input_text, word)
-        output.push(word)
+    if @tool == "Anagram"
+      list = prepare_words(list_of_items_from_category(@output_category, :name))
+      combo_array = words_array_combinations(list, @output_num_words)
+      combo_array.each do |word|
+        if anagrams?(@input_text, word)
+          output.push(word)
+        end
       end
     end
     output
