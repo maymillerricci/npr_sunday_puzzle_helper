@@ -39,7 +39,7 @@ class AnagramPlus
   end
 
   def anagrams?(word1, word2)
-    word1.downcase.chars.sort == word2.downcase.chars.sort
+    word1.chars.sort == word2.chars.sort
   end
 
   def words_array_combinations(words_array, number_of_words)
