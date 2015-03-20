@@ -275,3 +275,54 @@ states = [
 states.each do |s|
   State.find_or_create_by!(name: s[0], capital: s[1])
 end
+
+presidents = [
+    %w(	George	Washington		),
+    %w(	John	Adams		),
+    %w(	Thomas	Jefferson		),
+    %w(	James	Madison		),
+    %w(	James	Monroe		),
+    %w(	John	Adams	Quincy	),
+    %w(	Andrew	Jackson		),
+    %w(	Martin	Van Buren		),
+    %w(	William	Harrison	Henry	),
+    %w(	John	Tyler		),
+    %w(	James	Polk	K.	),
+    %w(	Zachary	Taylor		),
+    %w(	Millard	Fillmore		),
+    %w(	Franklin	Pierce		),
+    %w(	James	Buchanan		),
+    %w(	Abraham	Lincoln		),
+    %w(	Andrew	Johnson		),
+    %w(	Ulysses	Grant	S.	),
+    %w(	Rutherford	Hayes	B.	),
+    %w(	James	Garfield	A.	),
+    %w(	Chester	Arthur		),
+    %w(	Grover	Cleveland		),
+    %w(	Benjamin	Harrison		),
+    %w(	Grover	Cleveland		),
+    %w(	William	McKinley		),
+    %w(	Theodore	Roosevelt		),
+    %w(	William	Taft	Howard	),
+    %w(	Woodrow	Wilson		),
+    %w(	Warren	Harding	G.	),
+    %w(	Calvin	Coolidge		),
+    %w(	Herbert	Hoover		),
+    %w(	Franklin	Roosevelt	D.	),
+    %w(	Harry	Truman	S	),
+    %w(	Dwight	Eisenhower	D.	),
+    %w(	John	Kennedy	F.	),
+    %w(	Lyndon	Johnson	B.	),
+    %w(	Richard	Nixon		),
+    %w(	Gerald	Ford		),
+    %w(	Jimmy	Carter		),
+    %w(	Ronald	Reagan		),
+    %w(	George	Bush		),
+    %w(	Bill	Clinton		),
+    %w(	George	Bush	W.	),
+    %w(	Barack	Obama		)
+]
+
+presidents.each do |p|
+  President.find_or_create_by!(first_name: p[0], middle_name: p[2], last_name: p[1])
+end
