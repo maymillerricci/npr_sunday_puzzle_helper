@@ -12,7 +12,7 @@ class AnagramPlus
   def process
     output = []
     if @tool == "Anagram"
-      list = prepare_words(list_of_items_from_category(@output_category, :name))
+      list = prepare_words(list_of_items_from_category(@output_category))
       combo_array = words_array_combinations(list, @output_num_words)
       combo_array.each do |word|
         if anagrams?(@input_text, word)
@@ -33,8 +33,9 @@ class AnagramPlus
     words_array.map { |w| prepare_word(w) }
   end
 
-  def list_of_items_from_category(category, field_name)
-    category.singularize.constantize.all.map { |i| i.send(field_name) }
+  def list_of_items_from_category(category_name)
+    category = AnagramsHelper::CATEGORIES.find { |c| c[:name] == category_name }
+    category[:model].all.map { |c| c.send(category[:primary_field]) }
   end
 
   def anagrams?(word1, word2)
