@@ -284,7 +284,7 @@ presidents = [
     %w(	James	Monroe		),
     %w(	John	Adams	Quincy	),
     %w(	Andrew	Jackson		),
-    %w(	Martin	Van Buren		),
+    %w(	Martin	Van\ Buren		),
     %w(	William	Harrison	Henry	),
     %w(	John	Tyler		),
     %w(	James	Polk	K.	),
