@@ -7,9 +7,9 @@
   = f.input :tool, required: false, label: "What transformation would you like to perform?", collection: ["Anagram"]
   %h2 Input
   = f.input :input_text, required: false, label: "Text"
-  = f.input :input_category, as: :select, collection: ["Countries", "Capitals", "States"], required: false, label: "Category"
+  = f.input :input_category, as: :select, collection: category_names, required: false, label: "Category"
   = f.input :input_num_words, as: :select, collection: (1..10), required: false, label: "Number of Words"
   %h2 Output
-  = f.input :output_category, as: :select, collection: ["Countries", "Capitals", "States"], required: false, label: "Category"
+  = f.input :output_category, as: :select, collection: category_names, required: false, label: "Category"
   = f.input :output_num_words, as: :select, collection: (1..10), required: false, label: "Number of Words"
   = f.submit "Anagram+!"
