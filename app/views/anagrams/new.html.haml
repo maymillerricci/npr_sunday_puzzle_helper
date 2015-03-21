@@ -1,7 +1,7 @@
 %h1 Anagram+ Tool
 %p Instructions: Use the Anagram+ tool to help solve the puzzles!
 
-= @output
+= @answer
 
 = simple_form_for :anagram, url: anagrams_path do |f|
   = f.input :tool, required: false, label: "What transformation would you like to perform?", collection: ["Anagram"]

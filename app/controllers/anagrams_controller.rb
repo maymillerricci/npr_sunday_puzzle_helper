@@ -3,7 +3,7 @@ class AnagramsController < ApplicationController
   end
 
   def create
-    @output = AnagramPlus.new(params[:anagram]).process
+    @answer = AnagramPlus.new(params[:anagram]).process
     render :new
   end
 end

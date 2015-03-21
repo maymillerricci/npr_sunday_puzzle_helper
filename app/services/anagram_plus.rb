@@ -10,17 +10,38 @@ class AnagramPlus
   end
 
   def process
+    input = []
     output = []
+
     if @tool == "Anagram"
-      list = prepare_words(list_of_items_from_category(@output_category))
-      combo_array = words_array_combinations(list, @output_num_words)
-      combo_array.each do |word|
-        if anagrams?(@input_text, word)
-          output.push(word)
+
+      if @input_category.present?
+        input_list = prepare_words(list_of_items_from_category(@input_category))
+        input_combo_array = words_array_combinations(input_list, @input_num_words)
+        input_combo_array.map! { |w| w + @input_text }
+      end
+
+      output_list = prepare_words(list_of_items_from_category(@output_category))
+      output_combo_array = words_array_combinations(output_list, @output_num_words)
+
+      output_combo_array.each do |word1|
+
+        if @input_category.present?
+          input_combo_array.each do |word2|
+            if anagrams?(word1, word2)
+              input.push(word2)
+              output.push(word1)
+            end
+          end
+        else
+          if anagrams?(@input_text, word1)
+            output.push(word1)
+          end
         end
+
       end
     end
-    output
+    [input, output]
   end
 
   private
