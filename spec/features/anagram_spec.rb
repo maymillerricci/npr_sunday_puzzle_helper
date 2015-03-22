@@ -1,6 +1,6 @@
 describe "anagram plus" do
 
-  describe "anagram tool" do
+  describe "anagram" do
 
     it "should show empty array if no results" do
       visit new_anagram_path
@@ -55,6 +55,23 @@ describe "anagram plus" do
 
       expect(page).to have_text("bucharest")
       expect(page).to have_text("carterbush")
+    end
+
+  end
+
+  describe "pull out words" do
+
+    it "should show correct answer" do
+      visit new_anagram_path
+
+      select "Pull out word", from: "anagram_tool"
+      fill_in "anagram_input_text", with: "Leonardo da Vinci"
+      select "Country Capitals", from: "anagram_output_category"
+      select "1", from: "anagram_output_num_words"
+
+      click_button "Anagram+!"
+
+      expect(page).to have_text("london")
     end
 
   end

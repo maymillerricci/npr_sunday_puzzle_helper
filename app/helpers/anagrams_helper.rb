@@ -1,4 +1,6 @@
 module AnagramsHelper
+  TOOLS = ["Anagram", "Pull out word"]
+
   CATEGORIES = [
     { name: "Countries",        model: Country,   primary_field: :name },
     { name: "Country Capitals", model: Capital,   primary_field: :name },

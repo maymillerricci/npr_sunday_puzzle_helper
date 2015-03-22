@@ -4,7 +4,7 @@
 = @answer
 
 = simple_form_for :anagram, url: anagrams_path do |f|
-  = f.input :tool, required: false, label: "What transformation would you like to perform?", collection: ["Anagram"]
+  = f.input :tool, required: false, label: "What transformation would you like to perform?", collection: AnagramsHelper::TOOLS
   %h2 Input
   = f.input :input_text, required: false, label: "Text"
   = f.input :input_category, as: :select, collection: category_names, required: false, label: "Category"
