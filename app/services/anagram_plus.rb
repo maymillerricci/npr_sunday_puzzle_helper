@@ -13,6 +13,7 @@ class AnagramPlus
     input = []
     output = []
 
+    # TODO: optimize method of anagramming with multiple words from category!
     if @tool == "Anagram"
       output_list = prepare_words(list_of_items_from_category(@output_category))
       output_combo_array = words_array_combinations(output_list, @output_num_words)
@@ -76,6 +77,7 @@ class AnagramPlus
     words_array.combination(number_of_words).map(&:join)
   end
 
+  # TODO: optimize!
   def word_somewhere_in_text?(word, text)
     text_chars = text.chars
     index = 0
