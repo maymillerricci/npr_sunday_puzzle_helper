@@ -39,7 +39,17 @@ class AnagramPlus
         end
       end
 
+    elsif @tool == "Pull out word"
+      # TODO: only works with 1 for now
+      if @output_num_words == 1
+        output_list = prepare_words(list_of_items_from_category(@output_category))
+        output_list.each do |w|
+          next unless word_somewhere_in_text?(w, @input_text)
+          output.push(w)
+        end
+      end
     end
+
     [input, output]
   end
 
@@ -64,6 +74,21 @@ class AnagramPlus
 
   def words_array_combinations(words_array, number_of_words)
     words_array.combination(number_of_words).map(&:join)
+  end
+
+  def word_somewhere_in_text?(word, text)
+    text_chars = text.chars
+    index = 0
+    word.chars.each do |c|
+      index_of_c = text_chars.find_index(c)
+      if index_of_c && index_of_c >= index
+        index = index_of_c
+        text_chars[index_of_c] = "*"
+      else
+        return
+      end
+    end
+    true
   end
 
 end
