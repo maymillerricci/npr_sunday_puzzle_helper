@@ -74,6 +74,19 @@ describe "anagram plus" do
       expect(page).to have_text("london")
     end
 
+    it "should show correct answer when same letter appears earlier in text" do
+      visit new_anagram_path
+
+      select "Pull out word", from: "anagram_tool"
+      fill_in "anagram_input_text", with: "Frank Sinatra"
+      select "World Capitals", from: "anagram_output_category"
+      select "1", from: "anagram_output_num_words"
+
+      click_button "Anagram+!"
+
+      expect(page).to have_text("ankara")
+    end
+
   end
 
 end

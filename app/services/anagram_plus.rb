@@ -83,7 +83,9 @@ class AnagramPlus
       index_of_c = text_chars.find_index(c)
       if index_of_c && index_of_c >= index
         index = index_of_c
-        text_chars[index_of_c] = "*"
+        (0..index_of_c).each do |i|
+          text_chars[i] = "*"
+        end
       else
         return
       end
