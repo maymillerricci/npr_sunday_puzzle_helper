@@ -326,3 +326,150 @@ presidents = [
 presidents.each do |p|
   President.find_or_create_by!(first_name: p[0], middle_name: p[2], last_name: p[1])
 end
+
+animals = %w(
+  alligator
+  alpaca
+  ant
+  antelope
+  ape
+  armadillo
+  ass
+  baboon
+  badger
+  bat
+  bear
+  beaver
+  bee
+  beetle
+  buffalo
+  burro
+  butterfly
+  camel
+  caribou
+  cat
+  cattle
+  cheetah
+  chimpanzee
+  chinchilla
+  cicada
+  clam
+  cockroach
+  cod
+  coyote
+  crab
+  cricket
+  crocodile
+  crow
+  deer
+  dinosaur
+  dog
+  dolphin
+  donkey
+  duck
+  eel
+  elephant
+  elk
+  ferret
+  fish
+  fly
+  fox
+  frog
+  gerbil
+  giraffe
+  gnat
+  gnu
+  goat
+  goldfish
+  gorilla
+  grasshopper
+  guinea\ pig
+  hamster
+  hare
+  hedgehog
+  herring
+  hippopotamus
+  hog
+  hornet
+  horse
+  hound
+  hyena
+  impala
+  insect
+  jackal
+  jellyfish
+  kangaroo
+  leopard
+  lion
+  lizard
+  llama
+  locust
+  louse
+  mallard
+  mammoth
+  manatee
+  marten
+  mink
+  minnow
+  mole
+  monkey
+  moose
+  mosquito
+  mouse
+  mule
+  muskrat
+  otter
+  ox
+  oyster
+  panda
+  pig
+  platypus
+  porcupine
+  porpoise
+  prairie\ dog
+  pug
+  rabbit
+  raccoon
+  rat
+  raven
+  reindeer
+  rhinoceros
+  salmon
+  sardine
+  scorpion
+  sea\ lion
+  seal
+  serval
+  shark
+  sheep
+  skunk
+  snail
+  snake
+  spider
+  squirrel
+  swine
+  termite
+  tiger
+  toad
+  tortoise
+  trout
+  turtle
+  wallaby
+  walrus
+  wasp
+  water\ buffalo
+  weasel
+  whale
+  wildebeest
+  wolf
+  wombat
+  woodchuck
+  worm
+  yak
+  yellow\ jacket
+  zebra
+)
+
+animals.each do |a|
+  Animal.find_or_create_by!(name: a)
+end
