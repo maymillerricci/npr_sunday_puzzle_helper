@@ -46,7 +46,7 @@ describe "anagram plus" do
 
       select "Anagram", from: "anagram_tool"
       fill_in "anagram_input_text", with: "r"
-      select "Country Capitals", from: "anagram_input_category"
+      select "World Capitals", from: "anagram_input_category"
       select "1", from: "anagram_input_num_words"
       select "Presidents", from: "anagram_output_category"
       select "2", from: "anagram_output_num_words"
@@ -66,7 +66,7 @@ describe "anagram plus" do
 
       select "Pull out word", from: "anagram_tool"
       fill_in "anagram_input_text", with: "Leonardo da Vinci"
-      select "Country Capitals", from: "anagram_output_category"
+      select "World Capitals", from: "anagram_output_category"
       select "1", from: "anagram_output_num_words"
 
       click_button "Anagram+!"
