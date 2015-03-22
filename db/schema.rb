@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322024137) do
+ActiveRecord::Schema.define(version: 20150322050544) do
 
   create_table "animals", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -50,5 +50,15 @@ ActiveRecord::Schema.define(version: 20150322024137) do
     t.string   "abbreviation", limit: 255
   end
 
+  create_table "us_cities", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "state_id",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "us_cities", ["state_id"], name: "index_us_cities_on_state_id", using: :btree
+
   add_foreign_key "capitals", "countries"
+  add_foreign_key "us_cities", "states"
 end
