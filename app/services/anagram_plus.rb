@@ -66,7 +66,7 @@ class AnagramPlus
 
   def list_of_items_from_category(category_name)
     category = AnagramsHelper::CATEGORIES.find { |c| c[:name] == category_name }
-    category[:model].all.map { |c| c.send(category[:primary_field]) }
+    category[:model].all.map { |c| c.send(category[:primary_field]) }.uniq # no need to double process duplicates, like 2 Bushes
   end
 
   def anagrams?(word1, word2)
